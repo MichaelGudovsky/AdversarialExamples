@@ -14,7 +14,7 @@ resnet = models.resnet101(weights=models.ResNet101_Weights.DEFAULT).to(device)
 googlenet = models.googlenet(weights=models.GoogLeNet_Weights.DEFAULT).to(device)
 vgg = models.vgg19(weights=models.VGG19_Weights.DEFAULT).to(device)
 mobilenet = models.mobilenet_v3_large(weights = models.MobileNet_V3_Large_Weights.DEFAULT).to(device)
-classifiers =  alexnet
+classifiers =  alexnet # Choose one of the classifiers above
 
 def evaluate(orig, pert, model):
 
