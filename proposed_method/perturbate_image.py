@@ -26,6 +26,8 @@ else:
     print('Found prepared perturbation')
 
     with open('./models_part/Proposed.npy', 'rb') as f:   #########################
+    #with open('./models_part/DF.npy', 'rb') as f:   #########################
+
         pert = np.load(f)
 
 # iterate all files from a directory
