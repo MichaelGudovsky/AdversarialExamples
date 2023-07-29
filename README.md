@@ -21,4 +21,8 @@ additionally, line 29 should replace line 28.
 With the pre-trained models' existence and a small test set, we have a demo run to see the perturbation and evaluate it.
 Because of the small test set' the accuracy is not as reported in the research
 
+In order to see the images from different models and SNR look in the folder result_images.
+
+The folder saliency map is added as part of our research for universal perturbation
+
 
