@@ -41,15 +41,26 @@ for file in os.listdir(directory):
     except:
         IndexError
 
-  
+rand_tensor = 2*torch.rand((3, 224, 224)).cuda() - torch.ones(3, 224, 224).cuda()  # random values tensor [-1,1]
+
 def insert_noise(image):
     im1 = (transforms.Compose([transforms.Resize(256),
                                 transforms.CenterCrop(224),
                                 transforms.ToTensor(),
                                 transforms.Normalize(mean = mean,std = std)])(image)).to(device)
 
+	#Average Method
+    #only deep fool
+    # pert_image = 1*im1 + 0.00002*torch.from_numpy(pert).cuda()
+
+    # # # #deep fool + rand tensor
+    # pert_image = 0.7*im1 + 0.0025*rand_tensor * torch.from_numpy(pert).cuda()    #KUKUKUKUKUKU
+
+
+    #deep fool + rand tensor + background
+    #pert_image = 1*im1 + 0.15*background_prepro + 0.0025*rand_tensor *  torch.from_numpy(pert).cuda()
+    
     pert_image = 0.7 * im1 + 0.35 * torch.from_numpy(pert).cuda()
-    total_noise = 0.35 * torch.from_numpy(pert).cpu()
     
     def clip_tensor(A, minv, maxv):
         tens1 = (minv*torch.ones(A.shape)).cuda()
