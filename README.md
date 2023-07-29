@@ -1,7 +1,29 @@
 # AdversarialExamples
+# DeepFool
+DeepFool is a simple algorithm to find the minimum adversarial perturbations in deep networks
 
-This project aims to generalize the Deep-Fool algorithm (13.	Moosavi-Dezfooli, S. M., Fawzi, A., & Frossard, P. (2016). 
-Deepfool: a simple and accurate method to fool deep neural networks) to be image and network agnostic
+### deepfool.py
+
+This function implements the algorithm proposed in [[1]](http://arxiv.org/pdf/1511.04599) using PyTorch to find adversarial perturbations.
+
+__Note__: The final softmax (loss) layer should be removed in order to prevent numerical instabilities.
+
+The parameters of the function are:
+
+- `image`: Image of size `HxWx3d`
+- `net`: neural network (input: images, output: values of activation **BEFORE** softmax).
+- `num_classes`: limits the number of classes to test against, by default = 10.
+- `max_iter`: max number of iterations, by default = 50.
+
+### test_deepfool.py
+
+A simple demo which computes the adversarial perturbation for a test image from ImageNet dataset.
+
+## Reference
+[1] S. Moosavi-Dezfooli, A. Fawzi, P. Frossard:
+*DeepFool: a simple and accurate method to fool deep neural networks*.  In Computer Vision and Pattern Recognition (CVPR ’16), IEEE, 2016.
+
+This project aims to generalize the Deep-Fool algorithm 
 
 The dataset is taken from the ImageNet ILSVRC2012 challenge and can be downloaded from the following link:
 https://www.kaggle.com/competitions/imagenet-object-localization-challenge/data
@@ -17,6 +39,7 @@ To view the comparison based on SNR and SSIM run snr.py and SSIM.py
 
 In order to see the results of a simple averaging replace in the file perturbate image for checking DF.npy instead proposed.npy replacing line 20 with line 21
 additionally, line 29 should replace line 28.
+choose the wanted perturbation method by changing methods in lines 52-63
 
 With the pre-trained models' existence and a small test set, we have a demo run to see the perturbation and evaluate it.
 Because of the small test set' the accuracy is not as reported in the research
