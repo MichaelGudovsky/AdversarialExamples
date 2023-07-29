@@ -7,9 +7,9 @@ import os
 torch.manual_seed(42)
 #from evaluate_model import *
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-training_data_path = '/media/michael/500GB/train' 
+training_data_path = '/train' 
 directory =  './test'
-perturbated_images_path = './for_graph' 
+perturbated_images_path = './ready_images' 
 
 
 
