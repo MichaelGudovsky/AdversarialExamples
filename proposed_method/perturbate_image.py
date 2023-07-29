@@ -17,7 +17,9 @@ mean = [ 0.485, 0.456, 0.406 ]
 std = [ 0.229, 0.224, 0.225 ]
 
    
-if not os.path.exists('./models_part/Proposed.npy'):  ####n CHECK IF   perturbation EXISTS
+if not os.path.exists('./models_part/Proposed.npy'):  ####n to run the proposed method
+#if not os.path.exists('./models_part/DF.npy'):  ####n to run the average method
+# both models exist in the path
     from perturbation import perturbation
     pert = perturbation(training_data_path)
 else:
