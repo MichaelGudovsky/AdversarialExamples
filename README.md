@@ -15,6 +15,10 @@ To evaluate the perturbation run evaluate_model.py
 
 To view the comparison based on SNR and SSIM run snr.py and SSIM.py
 
-In order to see the results of a simple averaging replace in the file perturbate image for checking DF.npy instead proposed.npy
+In order to see the results of a simple averaging replace in the file perturbate image for checking DF.npy instead proposed.npy replacing line 20 with line 21
+additionally, line 29 should replace line 28.
+
+With the pre-trained models' existence and a small test set, we have a demo run to see the perturbation and evaluate it.
+Because of the small test set' the accuracy is not as reported in the research
 
 
